@@ -1,0 +1,9 @@
+_webeoc_delete_flag NVARCHAR(500)
+department  NVARCHAR(500)
+email   NVARCHAR(500)
+fk_table_447    INT 		
+form_session_name   NVARCHAR(500)
+name    NVARCHAR(500)
+organization    NVARCHAR(500)
+phone   NVARCHAR(500)
+title   NVARCHAR(500)

@@ -1,0 +1,383 @@
+<html>
+
+<head>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+      name="viewport" />
+   <link rel="stylesheet" media="all"
+      href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+   <link rel="stylesheet" media="all" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+   <link rel="stylesheet" media="all" href="//webeocboardfiles.juvare.com/board/latest/css/material-kit.min.css"
+      path="/css/material-kit.min.css" />
+</head>
+
+<body class="bg-faded-grey-light" data-webeocdatetimeformat="{data/@webeocdatetimeformat}"
+   data-presentation="{/data/ViewParameter[@name = 'presentation']}">
+   <section class="d-none">
+      <span button="pdf-button">
+         <pdflink enablemediaquery="true" enablejs="true" orientation="landscape" type="link">PDF</pdflink>
+      </span>
+   </section>
+   <eocrepeatallrecords>
+      <main aria-label="Main Section" class="page-wrap flex flex-column">
+         <nav class="navbar navbar-default navbar-expand-lg" aria-label="Navigation" id="iwb6a">
+            <header class="container-fluid" aria-label="Header">
+               <div class="flex">
+                  <div class="img-agencyinfo mr-3 mobile-hide-lg">
+                     <agencyinfo type="primarylogo" />
+                  </div>
+                  <div>
+                     <h4>Record Details</h4>
+                     <h6>Board Record</h6>
+                  </div>
+               </div>
+               <div class="flex print-hide align-items-center">
+                  <boardpermission name="Update">
+                     <viewlink name="Input feedback" class="btn btn-sm btn-primary mobile-hide d-panel" type="button">
+                        <viewparameter name="presentation">
+                           <value-of select="/data/ViewParameter[@name = 'presentation']" />
+                        </viewparameter>
+                        Edit
+                        <i class="material-icons ml-2">create</i>
+                     </viewlink>
+                  </boardpermission>
+                  <ul class="navbar-nav ml-2 print-hide d-none d-sm-flex">
+                     <li class="nav-item dropdown flex flex-center">
+                        <i class="material-icons cursor-pointer" data-toggle="dropdown">more_horiz</i>
+                        <div class="dropdown-menu dropdown-menu-right cursor-pointer navbar-dropdown-override"
+                           x-placement="bottom-end">
+                           <a button="print-button" class="dropdown-item">Print Page</a>
+                           <a activate="pdf-button" class="dropdown-item">Export to PDF</a>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </header>
+         </nav>
+         <foreignkey type="viewlink" table="touchpoints" />
+         <div class="scrollable-area">
+            <div>
+               <section
+                  class="container-fluid container-max-width pt-2 pb-2 mt-2 form-border rounded dst-detail-view dst-display-section"
+                  id="ihwoj">
+                  <nav class="row print-hide my-2 mobile-hide">
+                     <div class="col">
+                        <returnlink class="btn btn-sm btn-link text-primary">
+                           <i class="material-icons">arrow_back_ios</i>
+                           Return
+                        </returnlink>
+                     </div>
+                     <div class="col text-right">
+                        <boardpermission name="Update">
+                           <viewlink name="Input feedback" type="link" class="btn btn-sm btn-link text-primary">
+                              <i class="material-icons">create</i>
+                              Edit Record
+                           </viewlink>
+                        </boardpermission>
+                     </div>
+                  </nav>
+                  <div class="row dst-display-row">
+                     <div class="col-md-12 mb-3 dst-display-group" id="ify3w">
+                        <span class="faded-grey mr-2">Form session name:</span>
+                        <span>
+                           <eocfield name="form_session_name" />
+                        </span>
+                     </div>
+                     <div class="col-md-12 mb-3 dst-display-group" id="ify3w">
+                        <span class="faded-grey mr-2">Touchpoint:</span>
+                        <span>
+                           <eocfield disableclick="true" name="touchpoint_name" table="touchpoints" type="fk" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-6 mb-3 dst-display-group" id="izakm">
+                        <span class="faded-grey mr-2">Name:</span>
+                        <span>
+                           <eocfield name="feedback_name" />
+                        </span>
+                     </div>
+                     <div class="col-md-6 mb-3 dst-display-group" id="ipv9h">
+                        <span class="faded-grey mr-2">Email:</span>
+                        <span>
+                           <eocfield name="netid" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-12 mb-3 dst-display-group" id="in78g">
+                        <span class="faded-grey mr-2">The meeting started and ended on time:</span>
+                        <span>
+                           <eocfield name="timely" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-12 mb-3 dst-display-group" id="iyrsd">
+                        <span class="faded-grey mr-2">Overall rating:</span>
+                        <span>
+                           <eocfield name="overall_rating" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-12 mb-3 dst-display-group" id="i8guj">
+                        <span class="faded-grey mr-2">Comments:</span>
+                        <span>
+                           <eocfield name="comments" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="form-header" id="ia0xq3">
+                     <hr class="horizontal-line-break mt-3 mb-3" />
+                     <h4>
+                        <b>Tell us more about yourself</b>
+                     </h4>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-12 mb-3 dst-display-group" id="igbty">
+                        <span class="faded-grey mr-2">Discipline/department:</span>
+                        <span>
+                           <eocfield name="discipline_department" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-12 mb-3 dst-display-group" id="it9tiq">
+                        <span class="faded-grey mr-2">Experience level:</span>
+                        <span>
+                           <eocfield name="experience_level" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="form-header" id="ixneq3">
+                     <hr class="horizontal-line-break mt-3 mb-3" />
+                     <h4>
+                        <b>Detailed rating</b>
+                     </h4>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-3 mb-3 dst-display-group" id="i247po">
+                        <span class="faded-grey mr-2">Effectiveness Rating:</span>
+                        <span>
+                           <eocfield name="effective" />
+                        </span>
+                     </div>
+                     <div class="col-md-3 mb-3 dst-display-group" id="i6hqvi">
+                        <span class="faded-grey mr-2">Material Relevance:</span>
+                        <span>
+                           <eocfield name="material" />
+                        </span>
+                     </div>
+                     <div class="col-md-3 mb-3 dst-display-group" id="iumok8">
+                        <span class="faded-grey mr-2">Content Relevance:</span>
+                        <span>
+                           <eocfield name="relevant" />
+                        </span>
+                     </div>
+                     <div class="col-md-3 mb-3 dst-display-group" id="ira0w5">
+                        <span class="faded-grey mr-2">Clarity of Objectives:</span>
+                        <span>
+                           <eocfield name="objectives" />
+                        </span>
+                     </div>
+                     <div class="col-md-3 mb-3 dst-display-group" id="ivdhbx">
+                        <span class="faded-grey mr-2">Technical Quality:</span>
+                        <span>
+                           <eocfield name="tech" />
+                        </span>
+                     </div>
+                     <div class="col-md-3 mb-3 dst-display-group" id="i4db11">
+                        <span class="faded-grey mr-2">Engagement Level:</span>
+                        <span>
+                           <eocfield name="engagement" />
+                        </span>
+                     </div>
+                     <div class="col-md-3 mb-3 dst-display-group" id="il0ejh">
+                        <span class="faded-grey mr-2">Pace of the Session:</span>
+                        <span>
+                           <eocfield name="pace" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="form-header" id="iyc3b8">
+                     <hr class="horizontal-line-break mt-3 mb-3" />
+                     <h4>
+                        <b>Open-ended questions</b>
+                     </h4>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-12 mb-3 dst-display-group" id="iv93mm">
+                        <span class="faded-grey mr-2">Open feedback:</span>
+                        <span>
+                           <eocfield name="open_feedback" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-12 mb-3 dst-display-group" id="irw45h">
+                        <span class="faded-grey mr-2">Key Takeaways:</span>
+                        <span>
+                           <eocfield name="key_takeaways" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-12 mb-3 dst-display-group" id="ix1ckz">
+                        <span class="faded-grey mr-2">Further Learning:</span>
+                        <span>
+                           <eocfield name="further_learning" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="form-header" id="ibllva">
+                     <hr class="horizontal-line-break mt-3 mb-3" />
+                     <h4>
+                        <b>Supplementary information</b>
+                     </h4>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-6 mb-3 dst-display-group">
+                        <span class="faded-grey mr-2">File 1:</span>
+                        <choose>
+                           <when test="string(@file_1) != ''">
+                              <span>
+                                 <attachment name="file_1" />
+                              </span>
+                           </when>
+                           <when test="string(@file_1_formSubmission) != ''">
+                              <span class="__designStudio_FormSubmissionUrl">
+                                 <a href="{string(@file_1_formSubmission)}" target="_blank">
+                                    <span style="display:none">
+                                       <eocfield name="file_1_formSubmission" />
+                                    </span>
+                                    Click To Open
+                                 </a>
+                              </span>
+                           </when>
+                        </choose>
+                     </div>
+                     <div class="col-md-6 mb-3 dst-display-group" id="im76mt">
+                        <span class="faded-grey mr-2">File 1 description:</span>
+                        <span>
+                           <eocfield name="file_1_desc" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-6 mb-3 dst-display-group">
+                        <span class="faded-grey mr-2">File 2:</span>
+                        <choose>
+                           <when test="string(@file_2) != ''">
+                              <span>
+                                 <attachment name="file_2" />
+                              </span>
+                           </when>
+                           <when test="string(@file_2_formSubmission) != ''">
+                              <span class="__designStudio_FormSubmissionUrl">
+                                 <a href="{string(@file_2_formSubmission)}" target="_blank">
+                                    <span style="display:none">
+                                       <eocfield name="file_2_formSubmission" />
+                                    </span>
+                                    Click To Open
+                                 </a>
+                              </span>
+                           </when>
+                        </choose>
+                     </div>
+                     <div class="col-md-6 mb-3 dst-display-group" id="iksqgw">
+                        <span class="faded-grey mr-2">File 2 description:</span>
+                        <span>
+                           <eocfield name="file_2_desc" />
+                        </span>
+                     </div>
+                  </div>
+                  <div class="row dst-display-row">
+                     <div class="col-md-6 mb-3 dst-display-group">
+                        <span class="faded-grey mr-2">File 3:</span>
+                        <choose>
+                           <when test="string(@file_3) != ''">
+                              <span>
+                                 <attachment name="file_3" />
+                              </span>
+                           </when>
+                           <when test="string(@file_3_formSubmission) != ''">
+                              <span class="__designStudio_FormSubmissionUrl">
+                                 <a href="{string(@file_3_formSubmission)}" target="_blank">
+                                    <span style="display:none">
+                                       <eocfield name="file_3_formSubmission" />
+                                    </span>
+                                    Click To Open
+                                 </a>
+                              </span>
+                           </when>
+                        </choose>
+                     </div>
+                     <div class="col-md-6 mb-3 dst-display-group" id="i4nqxj">
+                        <span class="faded-grey mr-2">File 3 description:</span>
+                        <span>
+                           <eocfield name="file_3_description" />
+                        </span>
+                     </div>
+                  </div>
+               </section>
+            </div>
+         </div>
+         <footer class="mobile-banner bg-primary text-white mobile-flex-md flex-justify d-panel-none">
+            <returnlink class="text-white cursor-pointer">
+               <div class="flex flex-col">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                  RETURN
+               </div>
+            </returnlink>
+            <boardpermission name="Update">
+               <viewlink name="Input feedback" class="text-white cursor-pointer">
+                  <div class="flex flex-col">
+                     <i class="material-icons">edit</i>
+                     EDIT
+                  </div>
+               </viewlink>
+            </boardpermission>
+            <div class="flex flex-col dropup d-md-flex cursor-pointer" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+               <i class="material-icons">more_horiz</i>
+               ACTIONS
+               <div class="dropdown-menu cursor-pointer">
+                  <a button="print-button" class="dropdown-item">Print Page</a>
+                  <a activate="pdf-button" class="dropdown-item">Export to PDF</a>
+               </div>
+            </div>
+         </footer>
+      </main>
+   </eocrepeatallrecords>
+   <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/core/jquery.min.js"
+      path="/js/core/jquery.min.js"></script>
+   <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/core/popper.min.js"
+      path="/js/core/popper.min.js"></script>
+   <script type="text/javascript"
+      src="//webeocboardfiles.juvare.com/board/latest/js/core/bootstrap-material-design.min.js"
+      path="/js/core/bootstrap-material-design.min.js"></script>
+   <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/moment.min.js"
+      path="/js/plugins/moment.min.js"></script>
+   <script type="text/javascript"
+      src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-datetimepicker.js"
+      path="/js/plugins/bootstrap-datetimepicker.js"></script>
+   <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/nouislider.min.js"
+      path="/js/plugins/nouislider.min.js"></script>
+   <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-tagsinput.js"
+      path="/js/plugins/bootstrap-tagsinput.js"></script>
+   <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-selectpicker.js"
+      path="/js/plugins/bootstrap-selectpicker.js"></script>
+   <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jasny-bootstrap.min.js"
+      path="/js/plugins/jasny-bootstrap.min.js"></script>
+   <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.flexisel.js"
+      path="/js/plugins/jquery.flexisel.js"></script>
+   <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.sharrre.js"
+      path="/js/plugins/jquery.sharrre.js"></script>
+   <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/material-kit.min.js"
+      path="/js/material-kit.min.js"></script>
+   <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/ux-webeoc-board-standards.js"
+      path="/js/ux-webeoc-board-standards.js"></script>
+</body>
+
+</html>

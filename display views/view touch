@@ -1,0 +1,551 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+        name="viewport" />
+    <link rel="stylesheet" media="all"
+        href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" media="screen"
+        href="//webeocboardfiles.juvare.com/board/1.0/lib/flatpickr/flatpickr.min.css" />
+    <link rel="stylesheet" media="all" href="//webeocboardfiles.juvare.com/board/latest/css/material-kit.min.css"
+        path="/css/material-kit.min.css" />
+</head>
+
+<body class="bg-faded-grey-light" data-webeocdatetimeformat="{data/@webeocdatetimeformat}"
+    data-presentation="{/data/ViewParameter[@name = 'presentation']}">
+    <section class="d-none">
+        <span button="pdf-button">
+            <pdflink enablemediaquery="true" enablejs="true" orientation="landscape" type="link">PDF</pdflink>
+        </span>
+    </section>
+    <eocrepeatallrecords>
+        <main aria-label="Main Section" class="page-wrap flex flex-column">
+            <nav class="navbar navbar-default navbar-expand-lg" aria-label="Navigation" id="ijup8">
+                <header class="container-fluid" aria-label="Header">
+                    <div class="flex">
+                        <div class="img-agencyinfo mr-3 mobile-hide-lg">
+                            <agencyinfo type="primarylogo" />
+                        </div>
+                        <div>
+                            <h4>Record Details</h4>
+                            <h6>Board Record</h6>
+                        </div>
+                    </div>
+                    <div class="flex print-hide align-items-center">
+                        <boardpermission name="Update">
+                            <viewlink name="Input touchpoint" class="btn btn-sm btn-primary mobile-hide d-panel"
+                                type="button">
+                                <viewparameter name="presentation">
+                                    <value-of select="/data/ViewParameter[@name = 'presentation']" />
+                                </viewparameter>
+                                Edit
+                                <i class="material-icons ml-2">create</i>
+                            </viewlink>
+                        </boardpermission>
+                        <ul class="navbar-nav ml-2 print-hide d-none d-sm-flex">
+                            <li class="nav-item dropdown flex flex-center">
+                                <i class="material-icons cursor-pointer" data-toggle="dropdown">more_horiz</i>
+                                <div class="dropdown-menu dropdown-menu-right cursor-pointer navbar-dropdown-override"
+                                    x-placement="bottom-end">
+                                    <a button="print-button" class="dropdown-item">Print Page</a>
+                                    <a activate="pdf-button" class="dropdown-item">Export to PDF</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+            </nav>
+            <div class="scrollable-area">
+                <div>
+                    <section
+                        class="container-fluid container-max-width pt-2 pb-2 mt-2 form-border rounded dst-detail-view dst-display-section"
+                        id="i1dwo">
+                        <nav class="row print-hide my-2 mobile-hide">
+                            <div class="col">
+                                <returnlink class="btn btn-sm btn-link text-primary">
+                                    <i class="material-icons">arrow_back_ios</i>
+                                    Return
+                                </returnlink>
+                            </div>
+                            <div class="col text-right">
+                                <boardpermission name="Update">
+                                    <viewlink name="Input touchpoint" type="link"
+                                        class="btn btn-sm btn-link text-primary">
+                                        <i class="material-icons">create</i>
+                                        Edit Record
+                                    </viewlink>
+                                </boardpermission>
+                            </div>
+                        </nav>
+                        <button type="button" class="btn btn-sm btn-primary" id="toggleQRButton">Show/hide QR
+                            Codes</button>
+                        <div class="row dst-display-row" id="codes" style="display: none;">
+                            <div class="mb-3 dst-display-group col-md-12" id="qrbox">
+                                <!-- Container for the Sign-in QR code -->
+                                <div id="qrbox-feedback" style="display: block;">
+                                    <h3>Feedback QR code:</h3>
+                                    <div id="qrcode-feedback" />
+                                    <!-- Placeholder for feedback QR code -->
+                                    <div id="feedback-link-container" />
+                                    <!-- Placeholder for feedback link -->
+                                    <button id="sign-in-qr" class="btn btn-sm btn-success">Switch to sign-in
+                                        code</button>
+                                    <button id="feedback-qr-disabled" class="btn btn-sm btn-secondary"
+                                        disabled="disabled">Switch to feedback code</button>
+                                </div>
+                                <!-- Container for the Sign-in QR code -->
+                                <div id="qrbox-signin" style="display: none;">
+                                    <h3>Sign-in QR code:</h3>
+                                    <div id="qrcode-signin" />
+                                    <!-- Placeholder for sign-in QR code -->
+                                    <div id="signin-link-container" />
+                                    <!-- Placeholder for sign-in link -->
+                                    <button id="sign-in-qr-disabled" class="btn btn-sm btn-secondary"
+                                        disabled="disabled">Switch to sign-in code</button>
+                                    <button id="feedback-qr" class="btn btn-sm btn-success">Switch to feedback
+                                        code</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row dst-display-row  py-1">
+                            <div class="col-md-6" id="itfllh">
+                                <span class="faded-grey mr-2">Name:</span>
+                                <span>
+                                    <eocfield name="touchpoint_name" />
+                                    <eocfield name="dataid" />
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row dst-display-row py-1">
+                            <div class="col-md-6" id="i6diqi">
+                                <span class="faded-grey mr-2">Start / End:</span>
+                                <span>
+                                    <eocfield name="start_time" /> -
+                                    <eocfield name="end_time" />
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row dst-display-row py-1">
+                            <div class="col-md-6" id="ieblth">
+                                <span class="faded-grey mr-2">Description:</span>
+                                <span>
+                                    <eocfield name="description" />
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row dst-display-row py-1">
+                            <div class="col-md-6" id="ifjjss">
+                                <span class="faded-grey mr-2">Location:</span>
+                                <span>
+                                    <eocfield name="location" />
+                                </span>
+                                <span>
+                                    <feature name="loc" address="location" autopopulate="address" type="button"
+                                        class="form-control btn btn-sm btn-primary px-2">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            Map
+                                            <i class="material-icons ml-1">room</i>
+                                        </div>
+                                    </feature>
+                                </span>
+                            </div>
+                        </div>
+                        <if test="@person_1 != '' or @person_2 != '' or @person_3 != '' or @person_4 != ''">
+                            <div id="ppl_info">
+                                <div class="row dst-display-row">
+                                    <div class="mb-3 dst-display-group col-md-6" id="iwmkmp">
+                                        <span class="faded-grey mr-2">Person 1:</span>
+                                        <span>
+                                            <eocfield name="person_1" />
+                                            (
+                                            <eocfield name="role_p1" />
+                                            )
+                                        </span>
+                                    </div>
+                                </div>
+                                <if test="@person_2 != ''">
+                                    <div class="row dst-display-row">
+                                        <div class="mb-3 dst-display-group col-md-6" id="i63j22">
+                                            <span class="faded-grey mr-2">Person 2:</span>
+                                            <span>
+                                                <eocfield name="person_2" />
+                                                (
+                                                <eocfield name="role_p2" />
+                                                )
+                                            </span>
+                                        </div>
+                                    </div>
+                                </if>
+                                <if test="@person_3 != ''">
+                                    <div class="row dst-display-row">
+                                        <div class="mb-3 dst-display-group col-md-6" id="indgw8">
+                                            <span class="faded-grey mr-2">Person 3:</span>
+                                            <span>
+                                                <eocfield name="person_3" />
+                                                (
+                                                <eocfield name="role_p3" />
+                                                )
+                                            </span>
+                                        </div>
+                                    </div>
+                                </if>
+                                <if test="@person_4 != ''">
+                                    <div class="row dst-display-row">
+                                        <div class="mb-3 dst-display-group col-md-6" id="iagcy1">
+                                            <span class="faded-grey mr-2">Person 4:</span>
+                                            <span>
+                                                <eocfield name="person_4" />
+                                                (
+                                                <eocfield name="role_p4" />
+                                                )
+                                            </span>
+                                        </div>
+                                    </div>
+                                </if>
+                            </div>
+                            <!-- ppl_info -->
+                        </if>
+                        <section id="ifjhgj" class="dst-child-view-table">
+                            <div class="dst-child-table-header d-flex align-items-center">
+                                <h2 class="section-header">Signed-in (<externalexpression name="signin_count"
+                                        table="signin">sum(case when fk_table_447 = @dataid and _webeoc_delete_flag !=
+                                        'Yes' then 1 else 0 end)</externalexpression>)</h2>
+                                <div class="media-body" />
+                                <boardpermission name="Create Signed-in">
+                                    <viewlink name="Input signin" table="signin">
+                                        <button type="button" class="btn btn-sm btn-primary">Sign-in
+                                            <i class="material-icons ml-2" style="top:-2px;">add</i>
+                                        </button>
+                                    </viewlink>
+                                </boardpermission>
+                            </div>
+                            <table class="table table-striped table-sm mt-1 sticky-header">
+                                <thead data-gjs-type="default">
+                                    <tr>
+                                        <th width="5%" class="bg-white ">
+                                            <sortlink field="name" type="rl" table="signin">Name</sortlink>
+                                        </th>
+                                        <th width="5%" class="bg-white ">
+                                            <sortlink field="email" type="rl" table="signin">Email</sortlink>
+                                        </th>
+                                        <th width="5%" class="bg-white ">
+                                            <sortlink field="phone" type="rl" table="signin">Phone</sortlink>
+                                        </th>
+                                        <th width="5%" class="bg-white ">
+                                            <sortlink field="organization" type="rl" table="signin">Organization
+                                            </sortlink>
+                                        </th>
+                                        <th width="5%" class="bg-white ">
+                                            <sortlink field="department" type="rl" table="signin">Department</sortlink>
+                                        </th>
+                                        <th width="5%" class="bg-white ">
+                                            <sortlink field="title" type="rl" table="signin">Title</sortlink>
+                                        </th>
+                                        <th width="5%" class="bg-white ">
+                                            <sortlink field="entrydate" type="rl" table="signin">Entrydate</sortlink>
+                                        </th>
+                                        <th width="5%" class="bg-white" />
+                                    </tr>
+                                </thead>
+                                <tbody updatesection="true">
+                                    <relatedlist table="signin" filter="ISNULL(_webeoc_delete_flag,'')&lt;&gt;'yes'"
+                                        applyIncidentFilter="false" rlid="ifjhgj">
+                                        <tr class="cursor-pointer js-viewlink-delegate" data-panel-id="detail-panel"
+                                            data-panel-default-viewname="_blank" data-panel-ignore-clicks=".dropdown">
+                                            <td>
+                                                <eocfield name="name" type="rl" table="signin" disableclick="true" />
+                                            </td>
+                                            <td>
+                                                <eocfield name="email" type="rl" table="signin" disableclick="true" />
+                                            </td>
+                                            <td>
+                                                <eocfield name="phone" type="rl" table="signin" disableclick="true" />
+                                            </td>
+                                            <td>
+                                                <eocfield name="organization" type="rl" table="signin"
+                                                    disableclick="true" />
+                                            </td>
+                                            <td>
+                                                <eocfield name="department" type="rl" table="signin"
+                                                    disableclick="true" />
+                                            </td>
+                                            <td>
+                                                <eocfield name="title" type="rl" table="signin" disableclick="true" />
+                                            </td>
+                                            <td>
+                                                <eocfield name="entrydate" type="rl" table="signin"
+                                                    disableclick="true" />
+                                            </td>
+                                            <td class="text-right">
+                                                <div class="dropdown cursor-pointer">
+                                                    <a class="custom-link d-block print-hide" data-toggle="dropdown">
+                                                        <i class="material-icons faded-grey">more_horiz</i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right cursor-pointer">
+                                                        <boardpermission name="Update Signed-in">
+                                                            <viewlink name="Input signin" table="signin"
+                                                                class="dropdown-item dst-viewlink-input">Edit</viewlink>
+                                                        </boardpermission>
+                                                        <boardpermission name="Delete Signed-in">
+                                                            <div class="dropdown-divider" />
+                                                            <viewlink name="Delete signin" table="signin"
+                                                                class="dropdown-item text-danger dst-viewlink-delete">
+                                                                Delete</viewlink>
+                                                        </boardpermission>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </relatedlist>
+                                </tbody>
+                            </table>
+                        </section>
+                        <section id="i025vn" class="dst-child-view-table">
+                            <div class="dst-child-table-header d-flex align-items-center">
+                                <h2 class="section-header">Feedback</h2>
+                                <div class="media-body" />
+                                <boardpermission name="Create Child Record">
+                                    <viewlink name="Input feedback" table="feedback">
+                                        <button type="button" class="btn btn-sm btn-primary">Add
+                                            <i class="material-icons ml-2" style="top:-2px;">add</i>
+                                        </button>
+                                    </viewlink>
+                                </boardpermission>
+                            </div>
+                            <table class="table table-striped table-sm mt-1 sticky-header">
+                                <thead data-gjs-type="default">
+                                    <tr>
+                                        <th width="5%" class="bg-white ">
+                                            <sortlink field="overall_rating" type="rl" table="feedback">Overall Rating
+                                            </sortlink>
+                                        </th>
+                                        <th width="5%" class="bg-white ">
+                                            <sortlink field="entrydate" type="rl" table="feedback">Entrydate</sortlink>
+                                        </th>
+                                        <th width="5%" class="bg-white"></th>
+                                    </tr>
+                                </thead>
+                                <tbody updatesection="true">
+                                    <relatedlist table="feedback" filter="ISNULL(_webeoc_delete_flag,'')&lt;&gt;'yes'"
+                                        applyIncidentFilter="false" rlid="i025vn">
+                                        <tr class="cursor-pointer js-viewlink-delegate" data-panel-id="detail-panel"
+                                            data-panel-default-viewname="_blank" data-panel-ignore-clicks=".dropdown">
+                                            <td>
+                                                <eocfield name="overall_rating" type="rl" table="feedback"
+                                                    disableclick="true" />
+                                            </td>
+                                            <td>
+                                                <eocfield name="entrydate" type="rl" table="feedback"
+                                                    disableclick="true" />
+                                            </td>
+                                            <td class="text-right">
+                                                <viewlink name="View feedback" table="feedback" target="sidePanel"
+                                                    class="mobile-hide-lg viewlink-panel dst-viewlink-details">
+                                                    <viewparameter name="presentation">panel</viewparameter>
+                                                </viewlink>
+                                                <div class="dropdown cursor-pointer">
+                                                    <a class="custom-link d-block print-hide" data-toggle="dropdown">
+                                                        <i class="material-icons faded-grey">more_horiz</i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right cursor-pointer">
+                                                        <viewlink name="View feedback" table="feedback"
+                                                            class="dropdown-item viewlink-default dst-viewlink-details">
+                                                            View</viewlink>
+                                                        <boardpermission name="Update Child Record">
+                                                            <viewlink name="Input feedback" table="feedback"
+                                                                class="dropdown-item dst-viewlink-input">Edit</viewlink>
+                                                        </boardpermission>
+                                                        <boardpermission name="Delete Child Record">
+                                                            <div class="dropdown-divider" />
+                                                            <viewlink name="Delete feedback" table="feedback"
+                                                                class="dropdown-item text-danger dst-viewlink-delete">
+                                                                Delete</viewlink>
+                                                        </boardpermission>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </relatedlist>
+                                </tbody>
+                            </table>
+                        </section>
+                    </section>
+                </div>
+            </div>
+            <footer class="mobile-banner bg-primary text-white mobile-flex-md flex-justify d-panel-none">
+                <returnlink class="text-white cursor-pointer">
+                    <div class="flex flex-col">
+                        <i class="material-icons">keyboard_arrow_left</i>
+                        RETURN
+                    </div>
+                </returnlink>
+                <boardpermission name="Update">
+                    <viewlink name="Input touchpoint" class="text-white cursor-pointer">
+                        <div class="flex flex-col">
+                            <i class="material-icons">edit</i>
+                            EDIT
+                        </div>
+                    </viewlink>
+                </boardpermission>
+                <div class="flex flex-col dropup d-md-flex cursor-pointer" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="material-icons">more_horiz</i>
+                    ACTIONS
+                    <div class="dropdown-menu cursor-pointer">
+                        <a button="print-button" class="dropdown-item">Print Page</a>
+                        <a activate="pdf-button" class="dropdown-item">Export to PDF</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </eocrepeatallrecords>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/core/jquery.min.js"
+        path="/js/core/jquery.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/core/popper.min.js"
+        path="/js/core/popper.min.js"></script>
+    <script type="text/javascript"
+        src="//webeocboardfiles.juvare.com/board/latest/js/core/bootstrap-material-design.min.js"
+        path="/js/core/bootstrap-material-design.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/moment.min.js"
+        path="/js/plugins/moment.min.js"></script>
+    <script type="text/javascript"
+        src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-datetimepicker.js"
+        path="/js/plugins/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/nouislider.min.js"
+        path="/js/plugins/nouislider.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-tagsinput.js"
+        path="/js/plugins/bootstrap-tagsinput.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-selectpicker.js"
+        path="/js/plugins/bootstrap-selectpicker.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jasny-bootstrap.min.js"
+        path="/js/plugins/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.flexisel.js"
+        path="/js/plugins/jquery.flexisel.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.sharrre.js"
+        path="/js/plugins/jquery.sharrre.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/material-kit.min.js"
+        path="/js/material-kit.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/ux-webeoc-board-standards.js"
+        path="/js/ux-webeoc-board-standards.js"></script>
+    <script type="text/javascript"
+        src="//webeocboardfiles.juvare.com/board/1.0/lib/flatpickr/flatpickr.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script type="text/javascript">//<![CDATA[
+        document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve DOM elements that will be interacted with
+            var sessionElement = document.getElementById("touchpoint_name__id_here"); // Element where session info is stored
+            var qrboxFeedback = document.getElementById("qrbox-feedback"); // Container for feedback QR code
+            var qrboxSignin = document.getElementById("qrbox-signin"); // Container for sign-in QR code
+
+            // Base URIs for the feedback and sign-in forms
+            var feedbackFormBaseURI = "https://forms.juvare.com/forms/2771502f-bf31-4822-811d-a3009d7cdff7?session=";
+            var signinFormBaseURI = "https://forms.juvare.com/forms/6597fdff-ceec-41c8-93a9-af461db6f2dc?session=";
+
+            // Check if the sessionElement has content and is not just whitespace
+            if (sessionElement && sessionElement.textContent.trim()) {
+                var encoded = encodeURIComponent(sessionElement.textContent.trim()); // Encode session information for URL usage
+
+                // Full URLs that will be used in QR codes and links
+                var feedbackURI = feedbackFormBaseURI + encoded;
+                var signinURI = signinFormBaseURI + encoded;
+
+                // Display versions of the URLs that are not encoded
+                var displayFeedbackURI = feedbackFormBaseURI + sessionElement.textContent.trim();
+                var displaySigninURI = signinFormBaseURI + sessionElement.textContent.trim();
+
+                // Generate and display QR codes using setupQRCode function
+                setupQRCode("qrcode-feedback", feedbackURI);
+                setupQRCode("qrcode-signin", signinURI);
+
+                // Create clickable links and copy functionality beneath each QR code
+                createLink("feedback-link-container", feedbackURI, "Feedback form", displayFeedbackURI);
+                createLink("signin-link-container", signinURI, "Sign-In form", displaySigninURI);
+            } else {
+                console.error("Element is missing or empty!"); // Log an error if sessionElement is not usable
+            }
+
+            // Function to initialize QR codes with the provided element ID and URL
+            function setupQRCode(elementId, url) {
+                new QRCode(document.getElementById(elementId), {
+                    text: url,
+                    width: 512,
+                    height: 512,
+                    colorDark: "#000000",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            }
+
+            // Event listener to toggle visibility of QR code sections
+            document.getElementById('toggleQRButton').addEventListener('click', function () {
+                toggleVisibility('codes');
+            });
+
+            // Function to create links with a visible URL and a copy button
+            function createLink(containerId, href, text, displayHref) {
+                var container = document.getElementById(containerId);
+                var span = document.createElement('span');
+                span.textContent = text + ": ";
+                var link = document.createElement('a');
+                link.href = href;
+                link.textContent = displayHref; // Display the human-readable URL
+                link.style.marginRight = "10px";
+                container.appendChild(span);
+                container.appendChild(link);
+
+                // Create a copy button with a clipboard icon
+                var copyBtn = document.createElement('button');
+                copyBtn.innerHTML = '&lt;i class="fas fa-copy"&gt;&lt;/i&gt;';
+                copyBtn.className = "btn btn-sm";
+                copyBtn.onclick = function () {
+                    // Copy the encoded URL to the clipboard
+                    navigator.clipboard.writeText(href).then(function () {
+                        alert('URL copied to clipboard!');
+                    }, function (err) {
+                        alert('Failed to copy URL: ', err);
+                    });
+                };
+                container.appendChild(copyBtn);
+            }
+
+            // Function to toggle the display style of an element, making it visible or hidden
+            function toggleVisibility(id) {
+                var element = document.getElementById(id);
+                if (element.style.display === 'none' || element.style.display === '') {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            }
+
+            // Function to toggle visibility of QR codes
+            function switchQR(displayId, hideId) {
+                var displayElement = document.getElementById(displayId);
+                var hideElement = document.getElementById(hideId);
+                if (displayElement && hideElement) {
+                    displayElement.style.display = 'block'; // Show this QR code
+                    hideElement.style.display = 'none';    // Hide the other QR code
+                }
+            }
+
+            // Retrieve button elements and attach event listeners
+            var signInBtn = document.getElementById("sign-in-qr");
+            var feedbackBtn = document.getElementById("feedback-qr");
+
+            if (signInBtn && feedbackBtn) {
+                signInBtn.addEventListener("click", function () {
+                    switchQR("qrbox-signin", "qrbox-feedback");
+                });
+
+                feedbackBtn.addEventListener("click", function () {
+                    switchQR("qrbox-feedback", "qrbox-signin");
+                });
+            }
+        });
+        //]]>
+    </script>
+</body>
+
+</html>

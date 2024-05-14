@@ -1,0 +1,170 @@
+<html>
+
+<head>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+      name="viewport" />
+   <link rel="stylesheet" media="all"
+      href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+   <link rel="stylesheet" media="all" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+   <link href="//webeocboardfiles.juvare.com/board/1.0/lib/flatpickr/flatpickr.min.css" rel="stylesheet"
+      media="screen" />
+   <link rel="stylesheet" media="all" href="//webeocboardfiles.juvare.com/board/latest/css/material-kit.min.css"
+      path="/css/material-kit.min.css" />
+</head>
+
+<body class="bg-faded-grey-light" data-webeocdatetimeformat="{data/@webeocdatetimeformat}">
+   <form aria-label="Data" class="mb-0" id="input-form">
+      <insertfields id="ic6ka">
+         <field name="_webeoc_delete_flag">'no'</field>
+      </insertfields>
+      <nav class="navbar navbar-default navbar-expand-lg" aria-label="Navigation">
+         <header class="container-fluid" aria-label="Header">
+            <div class="flex">
+               <div class="img-agencyinfo mr-3 mobile-hide-lg">
+                  <agencyinfo type="primarylogo" />
+               </div>
+               <div>
+                  <h4>Add/Edit Record</h4>
+                  <h6>Board Record</h6>
+               </div>
+            </div>
+         </header>
+      </nav>
+      <main aria-label="Main Section" class="container-fluid container-max-width pt-2 pb-2 mt-2 rounded form-border">
+         <section class="form-section" id="i1dwo">
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-4" id="ilu2rg" conditional="">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">
+                     Name
+                  </label>
+                  <input name="touchpoint_name" type="text" class="form-control" size="20" value="" />
+               </div>
+               <div class="form-group bmd-form-group col-md-4" id="ij35u6" conditional="">
+                  <label class="form-label d-flex align-items-center required" style="pointer-events: auto"
+                     for="start_time" id="i8h81g">Start</label>
+                  <input name="start_time" type="text" class="form-control dtgpickr" fieldtype="datetime" label="Start"
+                     id="start_time" required="required" />
+               </div>
+               <div class="form-group bmd-form-group col-md-4" id="i5vobi" conditional="">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="end_time"
+                     id="isp724">End</label>
+                  <input name="end_time" type="text" class="form-control dtgpickr" fieldtype="datetime" label="End"
+                     id="end_time" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="ipdofm" conditional="">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="description"
+                     id="i0ihpi">Description</label>
+                  <textarea name="description" rows="8" class="form-control" id="description" label="Description" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="iqbvms" conditional="">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="location"
+                     id="i5g4wl">Location</label>
+                  <div class="input-group">
+                     <input name="location" type="text" class="form-control" />
+                     <div class="input-group-append">
+                        <feature name="loc" address="location" autopopulate="address" type="button"
+                           class="btn btn-sm btn-primary m-0 rounded-right">
+                           <div class="d-flex align-items-center justify-content-center">
+                              Map <i class="material-icons ml-1">room</i>
+                           </div>
+                        </feature>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-6" id="ihsydt" conditional="">
+                  <label class="form-label d-flex align-items-center required" style="pointer-events: auto"
+                     for="person_1" id="ifdxud">Person 1</label>
+                  <input name="person_1" type="text" class="form-control" label="Person 1" id="person_1"
+                     required="required" />
+               </div>
+               <div class="form-group bmd-form-group col-md-6" id="ie0339" conditional="">
+                  <label class="form-label d-flex align-items-center required" style="pointer-events: auto"
+                     for="role_p1" id="izxkco">Role of person 1</label>
+                  <select name="role_p1" class="form-control" label="Role of person 1" id="role_p1" required="required"
+                     list="Custom board - Touchpoints - Roles" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-6" id="i1jrvw" conditional="">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="person_2"
+                     id="i61wl9">Person 2</label>
+                  <input name="person_2" type="text" class="form-control" label="Person 2" id="person_2" />
+               </div>
+               <div class="form-group bmd-form-group col-md-6" id="iltid2" conditional="">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="role_p2"
+                     id="ix1v9e">Role of person 2</label>
+                  <select name="role_p2" class="form-control" label="Role of person 2" id="role_p2"
+                     list="Custom board - Touchpoints - Roles" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-6" id="iqlzzh" conditional="">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="person_3"
+                     id="i4u4g4">Person 3</label>
+                  <input name="person_3" type="text" class="form-control" label="Person 3" id="person_3" />
+               </div>
+               <div class="form-group bmd-form-group col-md-6" id="ijtbzf" conditional="">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="role_p3"
+                     id="ie4uvg">Role of person 3</label>
+                  <select name="role_p3" class="form-control" label="Role of person 3" id="role_p3"
+                     list="Custom board - Touchpoints - Roles" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-6" id="i029l1" conditional="">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="person_4"
+                     id="i0s0th">Person 4</label>
+                  <input name="person_4" type="text" class="form-control" label="Person 4" id="person_4" />
+               </div>
+               <div class="form-group bmd-form-group col-md-6" id="iibqxk" conditional="">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="role_p4"
+                     id="iaykl3">Role of person 4</label>
+                  <select name="role_p4" class="form-control" label="Role of person 4" id="role_p4"
+                     list="Custom board - Touchpoints - Roles" />
+               </div>
+            </div>
+         </section>
+         <section class="text-right" aria-label="Footer">
+            <returnbutton button="return-button" class="btn btn-sm btn-outline-primary mr-2">Cancel</returnbutton>
+            <savebutton class="btn btn-sm btn-primary">Save</savebutton>
+         </section>
+      </main>
+      <div class="input-delete-flag">
+         <boardpermission name="Delete">
+            <input type="hidden" name="_webeoc_delete_flag" value="no" />
+         </boardpermission>
+      </div>
+   </form>
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/core/jquery.min.js" path="/js/core/jquery.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/core/popper.min.js" path="/js/core/popper.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/core/bootstrap-material-design.min.js"
+      path="/js/core/bootstrap-material-design.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/moment.min.js" path="/js/plugins/moment.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-datetimepicker.js"
+      path="/js/plugins/bootstrap-datetimepicker.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/nouislider.min.js"
+      path="/js/plugins/nouislider.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-tagsinput.js"
+      path="/js/plugins/bootstrap-tagsinput.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-selectpicker.js"
+      path="/js/plugins/bootstrap-selectpicker.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jasny-bootstrap.min.js"
+      path="/js/plugins/jasny-bootstrap.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.flexisel.js"
+      path="/js/plugins/jquery.flexisel.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.sharrre.js"
+      path="/js/plugins/jquery.sharrre.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/material-kit.min.js" path="/js/material-kit.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/1.0/lib/flatpickr/flatpickr.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/ux-webeoc-board-standards.js"
+      path="/js/ux-webeoc-board-standards.js" />
+</body>
+
+</html>

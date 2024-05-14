@@ -1,0 +1,131 @@
+<html>
+
+<head>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+      name="viewport" />
+   <link rel="stylesheet" media="all"
+      href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+   <link rel="stylesheet" media="all" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+   <link rel="stylesheet" media="all" href="//webeocboardfiles.juvare.com/board/latest/css/material-kit.min.css"
+      path="/css/material-kit.min.css" />
+</head>
+
+<body class="bg-faded-grey-light" data-webeocdatetimeformat="{data/@webeocdatetimeformat}">
+   <form aria-label="Data" class="mb-0" id="input-form">
+      <insertfields id="iyerb">
+         <field name="_webeoc_delete_flag">'no'</field>
+      </insertfields>
+      <nav class="navbar navbar-default navbar-expand-lg" aria-label="Navigation">
+         <header class="container-fluid" aria-label="Header">
+            <div class="flex">
+               <div class="img-agencyinfo mr-3 mobile-hide-lg">
+                  <agencyinfo type="primarylogo" />
+               </div>
+               <div>
+                  <h4>Add/Edit Record</h4>
+                  <h6>Board Record</h6>
+               </div>
+            </div>
+         </header>
+      </nav>
+      <main aria-label="Main Section" class="container-fluid container-max-width pt-2 pb-2 mt-2 rounded form-border">
+         <section class="form-section" id="im2mt">
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="iyph3i" style="display:none">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto"
+                     for="form_session_name" id="i16p3t">Form session name</label>
+                  <input name="form_session_name" type="text" class="form-control" label="Form session name"
+                     id="form_session_name" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="iznmf">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto"
+                     for="form_session_name" id="ikj5t6-2">Touchpoint name:</label>
+                  <foreignkey table="touchpoints" sort="name" type="select" filter="_webeoc_delete_flag!='Yes'">
+                     <eocfield table="touchpoints" name="touchpoint_name" type="fk" />
+                  </foreignkey>
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="iznmf-2">
+                  <label class="form-label d-flex align-items-center required" style="pointer-events: auto" for="name"
+                     id="i1hkcb">Name</label>
+                  <input name="name" type="text" class="form-control" label="Name" required="required" id="name" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="i94r4j">
+                  <label class="form-label d-flex align-items-center required" style="pointer-events: auto" for="email"
+                     id="iissii">Email</label>
+                  <input name="email" type="email" class="form-control" label="Email" required="required" id="email" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="i9im3j">
+                  <label class="form-label d-flex align-items-center required" style="pointer-events: auto" for="phone"
+                     id="i89s7h">Phone</label>
+                  <input name="phone" type="tel" class="form-control" label="Phone" required="required" id="phone" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="ikdwec">
+                  <label class="form-label d-flex align-items-center required" style="pointer-events: auto"
+                     for="organization" id="ibh3rw">Organization</label>
+                  <input name="organization" type="text" class="form-control" label="Organization" id="organization"
+                     required="required" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="ix4xak">
+                  <label class="form-label d-flex align-items-center required" style="pointer-events: auto"
+                     for="department" id="ipo1r8">Department</label>
+                  <input name="department" type="text" class="form-control" label="Department" id="department"
+                     required="required" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="ii7hay">
+                  <label class="form-label d-flex align-items-center required" style="pointer-events: auto" for="title"
+                     id="iixhr3">Title</label>
+                  <input name="title" type="text" class="form-control" label="Title" id="title" required="required" />
+               </div>
+            </div>
+         </section>
+         <section class="text-right" aria-label="Footer">
+            <returnbutton button="return-button" class="btn btn-sm btn-outline-primary mr-2">Cancel</returnbutton>
+            <savebutton class="btn btn-sm btn-primary">Save</savebutton>
+         </section>
+      </main>
+      <div class="input-delete-flag">
+         <boardpermission name="Delete">
+            <input type="hidden" name="_webeoc_delete_flag" value="no" />
+         </boardpermission>
+      </div>
+   </form>
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/core/jquery.min.js" path="/js/core/jquery.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/core/popper.min.js" path="/js/core/popper.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/core/bootstrap-material-design.min.js"
+      path="/js/core/bootstrap-material-design.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/moment.min.js" path="/js/plugins/moment.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-datetimepicker.js"
+      path="/js/plugins/bootstrap-datetimepicker.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/nouislider.min.js"
+      path="/js/plugins/nouislider.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-tagsinput.js"
+      path="/js/plugins/bootstrap-tagsinput.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-selectpicker.js"
+      path="/js/plugins/bootstrap-selectpicker.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jasny-bootstrap.min.js"
+      path="/js/plugins/jasny-bootstrap.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.flexisel.js"
+      path="/js/plugins/jquery.flexisel.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.sharrre.js"
+      path="/js/plugins/jquery.sharrre.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/material-kit.min.js" path="/js/material-kit.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/ux-webeoc-board-standards.js"
+      path="/js/ux-webeoc-board-standards.js" />
+</body>
+
+</html>

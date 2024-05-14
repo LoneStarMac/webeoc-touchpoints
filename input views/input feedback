@@ -1,0 +1,792 @@
+<html>
+
+<head>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+      name="viewport" />
+   <link rel="stylesheet" media="all"
+      href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+   <link rel="stylesheet" media="all" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+   <link rel="stylesheet" media="all" href="//webeocboardfiles.juvare.com/board/latest/css/material-kit.min.css"
+      path="/css/material-kit.min.css" />
+</head>
+
+<body class="bg-faded-grey-light" data-webeocdatetimeformat="{data/@webeocdatetimeformat}">
+   <form aria-label="Data" class="mb-0" id="input-form">
+      <insertfields id="icl1g">
+         <field name="_webeoc_delete_flag">'no'</field>
+      </insertfields>
+      <nav class="navbar navbar-default navbar-expand-lg" aria-label="Navigation">
+         <header class="container-fluid" aria-label="Header">
+            <div class="flex">
+               <div class="img-agencyinfo mr-3 mobile-hide-lg">
+                  <agencyinfo type="primarylogo" />
+               </div>
+               <div>
+                  <h4>Add/Edit Record</h4>
+                  <h6>Board Record</h6>
+               </div>
+            </div>
+         </header>
+      </nav>
+      <main aria-label="Main Section" class="container-fluid container-max-width pt-2 pb-2 mt-2 rounded form-border">
+         <section class="form-section" id="ihwoj">
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="ilcus9">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto"
+                     for="form_session_name" id="ikj5t6">Form session name:</label>
+                  <input name="form_session_name" type="text" class="form-control" label="Form session name"
+                     id="form_session_name" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="ilcus92">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto"
+                     for="form_session_name" id="ikj5t6-2">Touchpoint name:</label>
+                  <foreignkey table="touchpoints" sort="name" type="select" filter="_webeoc_delete_flag!='Yes'">
+                     <eocfield table="touchpoints" name="touchpoint_name" type="fk" />
+                  </foreignkey>
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-6" id="id4hz">
+                  <label class="form-label d-flex align-items-center required" style="pointer-events: auto" for="name"
+                     id="ibcxia">Name</label>
+                  <input name="feedback_name" type="text" class="form-control" label="Name" id="feedback_name"
+                     required="required" />
+               </div>
+               <div class="form-group bmd-form-group col-md-6" id="i87c0y">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="email"
+                     id="iz8rp9">Email address</label>
+                  <input name="email" type="email" class="form-control" label="Email address" id="email" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="ikj4jr">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">The meeting started
+                     and ended on time</label>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="timely" value="Yes" label="The meeting started and ended on time"
+                           class="form-check-input" />Yes<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="timely" value="No" label="The meeting started and ended on time"
+                           class="form-check-input" />No<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="id7eis">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">Overall rating<div
+                        class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="On a scale of 0-5, how do you rate this contact overall?"
+                           style="line-height: .5; font-size: 1.6em;">help</i>
+                     </div>
+                  </label>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="overall_rating" value="0" label="Overall rating"
+                           class="form-check-input" />0—Not a good meeting or training<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="overall_rating" value="1" label="Overall rating"
+                           class="form-check-input" />1<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="overall_rating" value="2" label="Overall rating"
+                           class="form-check-input" />2<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="overall_rating" value="3" label="Overall rating"
+                           class="form-check-input" />3<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="overall_rating" value="4" label="Overall rating"
+                           class="form-check-input" />4<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="overall_rating" value="5" label="Overall rating"
+                           class="form-check-input" />5—Excellent meeting or training<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="ilgzkl">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">Comments</label>
+                  <textarea name="comments" rows="8" class="form-control" />
+               </div>
+            </div>
+            <div class="form-header" id="ia0xq3">
+               <hr class="horizontal-line-break mt-3 mb-3" />
+               <h4>
+                  <b>Tell us more about yourself</b>
+               </h4>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="idswji">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto"
+                     for="discipline_department" id="i9o7rj">Discipline/department</label>
+                  <input name="discipline_department" type="text" class="form-control" label="Discipline/department"
+                     id="discipline_department" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="ih7fw8">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">Experience level<div
+                        class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="On a scale of 0-5, how knowledgeable and experienced were you of the content before this session?"
+                           style="line-height: .5; font-size: 1.6em;">help</i>
+                     </div>
+                  </label>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="experience_level" value="0" label="Experience level"
+                           class="form-check-input" />0—inexperienced or not knowledgable at all<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="experience_level" value="1" label="Experience level"
+                           class="form-check-input" />1—Beginner<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="experience_level" value="2" label="Experience level"
+                           class="form-check-input" />2—Novice<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="experience_level" value="3" label="Experience level"
+                           class="form-check-input" />3—Intermediate<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="experience_level" value="4" label="Experience level"
+                           class="form-check-input" />4—Advanced<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="experience_level" value="5" label="Experience level"
+                           class="form-check-input" />5—Expert<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="form-header" id="ixneq3">
+               <hr class="horizontal-line-break mt-3 mb-3" />
+               <h4>
+                  <b>Detailed rating</b>
+               </h4>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-3" id="isdlko">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">Effectiveness Rating
+                     <div class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="On a scale of 0-5, how effective was the presenter in communicating the material?"
+                           style="line-height: .5; font-size: 1.6em;">help</i>
+                     </div>
+                  </label>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="effective" value="0" label="Effectiveness Rating"
+                           class="form-check-input" />0—Leader did not seem effective<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="effective" value="1" label="Effectiveness Rating"
+                           class="form-check-input" />1<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="effective" value="2" label="Effectiveness Rating"
+                           class="form-check-input" />2<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="effective" value="3" label="Effectiveness Rating"
+                           class="form-check-input" />3<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="effective" value="4" label="Effectiveness Rating"
+                           class="form-check-input" />4<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="effective" value="5" label="Effectiveness Rating"
+                           class="form-check-input" />5—Leader seemed extremely effective<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+               </div>
+               <div class="form-group bmd-form-group col-md-3" id="i5psri">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">Material Relevance
+                     <div class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="On a scale of 0-5, how relevant was the information provided to your needs or role?"
+                           style="line-height: .5; font-size: 1.6em;">help</i>
+                     </div>
+                  </label>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="material" value="0" label="Material Relevance"
+                           class="form-check-input" />0—Not accessible, usable, relevant, or present.<span
+                           class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="material" value="1" label="Material Relevance"
+                           class="form-check-input" />1<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="material" value="2" label="Material Relevance"
+                           class="form-check-input" />2<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="material" value="3" label="Material Relevance"
+                           class="form-check-input" />3<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="material" value="4" label="Material Relevance"
+                           class="form-check-input" />4<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="material" value="5" label="Material Relevance"
+                           class="form-check-input" />5—Applicable and easy for anyone to use and understand<span
+                           class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+               </div>
+               <div class="form-group bmd-form-group col-md-3" id="iez6nl">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">Content Relevance<div
+                        class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="On a scale of 0-5, how relevant was the information provided to your needs or role?"
+                           style="line-height: .5; font-size: 1.6em;">help</i>
+                     </div>
+                  </label>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="relevant" value="0" label="Content Relevance"
+                           class="form-check-input" />0—I did not need to know this<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="relevant" value="1" label="Content Relevance"
+                           class="form-check-input" />1<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="relevant" value="2" label="Content Relevance"
+                           class="form-check-input" />2<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="relevant" value="3" label="Content Relevance"
+                           class="form-check-input" />3<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="relevant" value="4" label="Content Relevance"
+                           class="form-check-input" />4<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="relevant" value="5" label="Content Relevance"
+                           class="form-check-input" />5—I needed to know this<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+               </div>
+               <div class="form-group bmd-form-group col-md-3" id="i5z0pd">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">Clarity of Objectives
+                     <div class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="On a scale of 0-5, how clear were the objectives of this session?"
+                           style="line-height: .5; font-size: 1.6em;">help</i>
+                     </div>
+                  </label>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="objectives" value="0" label="Clarity of Objectives"
+                           class="form-check-input" />0—Objectives didn't exist or were not communicated<span
+                           class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="objectives" value="1" label="Clarity of Objectives"
+                           class="form-check-input" />1<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="objectives" value="2" label="Clarity of Objectives"
+                           class="form-check-input" />2<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="objectives" value="3" label="Clarity of Objectives"
+                           class="form-check-input" />3<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="objectives" value="4" label="Clarity of Objectives"
+                           class="form-check-input" />4<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="objectives" value="5" label="Clarity of Objectives"
+                           class="form-check-input" />5—Objectives were clear and followed<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+               </div>
+               <div class="form-group bmd-form-group col-md-3" id="ioibci">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">Technical Quality<div
+                        class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="On a scale of 0-5, how would you rate the technical quality of the meeting?"
+                           style="line-height: .5; font-size: 1.6em;">help</i>
+                     </div>
+                  </label>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="tech" value="0" label="Technical Quality"
+                           class="form-check-input" />0–Technology did not work or detracted from the experience<span
+                           class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="tech" value="1" label="Technical Quality"
+                           class="form-check-input" />1<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="tech" value="2" label="Technical Quality"
+                           class="form-check-input" />2<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="tech" value="3" label="Technical Quality"
+                           class="form-check-input" />3<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="tech" value="4" label="Technical Quality"
+                           class="form-check-input" />4<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="tech" value="5" label="Technical Quality"
+                           class="form-check-input" />5—Technology worked perfectly and contributed to the
+                        experience<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+               </div>
+               <div class="form-group bmd-form-group col-md-3" id="iz5rw4">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">Engagement Level<div
+                        class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="On a scale of 0-5, how engaged did you feel during the session?"
+                           style="line-height: .5; font-size: 1.6em;">help</i>
+                     </div>
+                  </label>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="engagement" value="0" label="Engagement Level"
+                           class="form-check-input" />0—Not engaged<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="engagement" value="1" label="Engagement Level"
+                           class="form-check-input" />1<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="engagement" value="2" label="Engagement Level"
+                           class="form-check-input" />2<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="engagement" value="3" label="Engagement Level"
+                           class="form-check-input" />3<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="engagement" value="4" label="Engagement Level"
+                           class="form-check-input" />4<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="engagement" value="5" label="Engagement Level"
+                           class="form-check-input" />5—Totally engaged<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+               </div>
+               <div class="form-group bmd-form-group col-md-3" id="i9i0di">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto">Pace of the Session
+                     <div class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="On a scale of 0-5, how would you rate the pace of the session?"
+                           style="line-height: .5; font-size: 1.6em;">help</i>
+                     </div>
+                  </label>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="pace" value="0" label="Pace of the Session"
+                           class="form-check-input" />0—too rushed or too slow<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="pace" value="1" label="Pace of the Session"
+                           class="form-check-input" />1<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="pace" value="2" label="Pace of the Session"
+                           class="form-check-input" />2<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="pace" value="3" label="Pace of the Session"
+                           class="form-check-input" />3<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="pace" value="4" label="Pace of the Session"
+                           class="form-check-input" />4<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                     <label class="form-check-label">
+                        <input type="radio" name="pace" value="5" label="Pace of the Session"
+                           class="form-check-input" />5—perfect pacing<span class="circle">
+                           <span class="check" />
+                        </span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="form-header" id="iyc3b8">
+               <hr class="horizontal-line-break mt-3 mb-3" />
+               <h4>
+                  <b>Open-ended questions</b>
+               </h4>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="ik1tn6">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="open_feedback"
+                     id="i2wu14">Open feedback<div class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="What did you like most about the session, and what could be improved?"
+                           style="line-height: .5; font-size: 1.6em;" id="i4soni">help</i>
+                     </div>
+                  </label>
+                  <textarea name="open_feedback" rows="3" class="form-control" id="open_feedback"
+                     label="Open feedback" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="irg4bo">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="key_takeaways"
+                     id="ih03mw">Key Takeaways<div class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="What are the key takeaways or learnings from this session?"
+                           style="line-height: .5; font-size: 1.6em;" id="it6aeb">help</i>
+                     </div>
+                  </label>
+                  <textarea name="key_takeaways" rows="3" class="form-control" label="Key Takeaways"
+                     id="key_takeaways" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-12" id="i06m3b">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto"
+                     for="further_learning" id="ij9p0l">Further Learning<div class="help-text-container ml-2">
+                        <i class="material-icons cursor-default faded-grey" data-toggle="tooltip" data-placement="right"
+                           title="What additional topics or content would you like to see in future sessions?"
+                           style="line-height: .5; font-size: 1.6em;" id="i68wyl">help</i>
+                     </div>
+                  </label>
+                  <textarea name="further_learning" rows="3" class="form-control" label="Further Learning"
+                     id="further_learning" />
+               </div>
+            </div>
+            <div class="form-header" id="ibllva">
+               <hr class="horizontal-line-break mt-3 mb-3" />
+               <h4>
+                  <b>Supplementary information</b>
+               </h4>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-6" id="iy38bd">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="file_1"
+                     id="igsjl3">File 1</label>
+                  <div>
+                     <input name="file_1" type="file" style="opacity: unset;position: unset;z-index: unset;width: auto;"
+                        label="File 1" id="file_1" />
+                  </div>
+                  <div style="display:none;" class="__designStudio_FormSubmissionUrl">
+                     <input id="file_1_formSubmission" name="file_1_formSubmission" />
+                  </div>
+               </div>
+               <div class="form-group bmd-form-group col-md-6" id="ishp7h">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="file_1_desc"
+                     id="i4lzl9">File 1 description</label>
+                  <input name="file_1_desc" type="text" class="form-control" label="File 1 description"
+                     id="file_1_desc" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-6" id="imw54v">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="file_2"
+                     id="i96skm">File 2</label>
+                  <div>
+                     <input name="file_2" type="file" style="opacity: unset;position: unset;z-index: unset;width: auto;"
+                        label="File 2" id="file_2" />
+                  </div>
+                  <div style="display:none;" class="__designStudio_FormSubmissionUrl">
+                     <input id="file_2_formSubmission" name="file_2_formSubmission" />
+                  </div>
+               </div>
+               <div class="form-group bmd-form-group col-md-6" id="iv77dd">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="file_2_desc"
+                     id="i4o8mf">File 2 description</label>
+                  <input name="file_2_desc" type="text" class="form-control" label="File 2 description"
+                     id="file_2_desc" />
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="form-group bmd-form-group col-md-6" id="i48d67">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto" for="file_3"
+                     id="i13keu">File 3</label>
+                  <div>
+                     <input name="file_3" type="file" style="opacity: unset;position: unset;z-index: unset;width: auto;"
+                        label="File 3" id="file_3" />
+                  </div>
+                  <div style="display:none;" class="__designStudio_FormSubmissionUrl">
+                     <input id="file_3_formSubmission" name="file_3_formSubmission" />
+                  </div>
+               </div>
+               <div class="form-group bmd-form-group col-md-6" id="inrppj">
+                  <label class="form-label d-flex align-items-center" style="pointer-events: auto"
+                     for="file_3_description" id="i5frfj">File 3 description</label>
+                  <input name="file_3_description" type="text" class="form-control" label="File 3 description"
+                     id="file_3_description" />
+               </div>
+            </div>
+         </section>
+         <section class="text-right" aria-label="Footer">
+            <returnbutton button="return-button" class="btn btn-sm btn-outline-primary mr-2">Cancel</returnbutton>
+            <savebutton class="btn btn-sm btn-primary">Save</savebutton>
+         </section>
+      </main>
+      <div class="input-delete-flag">
+         <boardpermission name="Delete">
+            <input type="hidden" name="_webeoc_delete_flag" value="no" />
+         </boardpermission>
+      </div>
+   </form>
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/core/jquery.min.js" path="/js/core/jquery.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/core/popper.min.js" path="/js/core/popper.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/core/bootstrap-material-design.min.js"
+      path="/js/core/bootstrap-material-design.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/moment.min.js" path="/js/plugins/moment.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-datetimepicker.js"
+      path="/js/plugins/bootstrap-datetimepicker.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/nouislider.min.js"
+      path="/js/plugins/nouislider.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-tagsinput.js"
+      path="/js/plugins/bootstrap-tagsinput.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-selectpicker.js"
+      path="/js/plugins/bootstrap-selectpicker.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jasny-bootstrap.min.js"
+      path="/js/plugins/jasny-bootstrap.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.flexisel.js"
+      path="/js/plugins/jquery.flexisel.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.sharrre.js"
+      path="/js/plugins/jquery.sharrre.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/material-kit.min.js" path="/js/material-kit.min.js" />
+   <script src="//webeocboardfiles.juvare.com/board/latest/js/ux-webeoc-board-standards.js"
+      path="/js/ux-webeoc-board-standards.js" />
+   <script>document.addEventListener("DOMContentLoaded", function () {
+         var userInput = document.getElementById('form_session_name');
+         var infoDiv = document.getElementById('ilcus9');
+
+         userInput.addEventListener('input', function () {
+            if (userInput.value.trim() !== '') {
+               infoDiv.style.display = 'block'; // Unhide the div
+            } else {
+               infoDiv.style.display = 'none'; // Hide the div if input is blank
+            }
+         });
+      });</script>
+</body>
+
+</html>
