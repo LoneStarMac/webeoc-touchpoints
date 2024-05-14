@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 
 <head>
    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -24,23 +24,23 @@
    <main id="list-view-main-section" aria-label="Main Section" data-activate-panel="detail-panel-x"
       class="page-wrap flex flex-row">
       <div class="flex flex-column flex-column-grow w-100">
-         <section class="navbar mobile-hide print-hide pl-3 pb-2" data-bst-type="tabGroup" id="ibkii">
-            <!--navigation tabs-->
+         <section class="navbar mobile-hide print-hide pl-3 pb-2" data-bst-type="tabGroup" name="Main Nav">
             <nav class="nav">
+               <!--navigation tabs-->
                <viewlink name="All sign-ins" ignoreerrors="true" class="nav-link">All sign-ins</viewlink>
                <viewlink name="All feedback" ignoreerrors="true" class="nav-link">All feedback</viewlink>
-               <viewlink name="All touchpoints" ignoreerrors="true" class="nav-link active">All touchpoints</viewlink>
+               <viewlink name="All touchpoints" ignoreerrors="true" class="nav-link">All touchpoints</viewlink>
             </nav>
             <!--navigation tabs-->
          </section>
-         <nav class="navbar navbar-default navbar-expand-md px-3" aria-label="Navigation" id="i61fy">
+         <nav class="navbar navbar-default navbar-expand-md px-3" aria-label="Navigation" id="ix6lq">
             <header class="container-fluid" aria-label="Header">
                <div class="flex">
                   <div class="img-agencyinfo mr-3 mobile-hide-lg">
                      <agencyinfo type="primarylogo" />
                   </div>
                   <div>
-                     <h4>All touchpoints</h4>
+                     <h4>All sign-ins</h4>
                      <h6>
                         <incidentname />
                      </h6>
@@ -50,7 +50,7 @@
                   <ul class="navbar-nav ml-auto print-hide d-none d-md-flex">
                      <li class="nav-item mr-2">
                         <boardpermission name="Create">
-                           <viewlink name="Input touchpoint" class="btn btn-sm btn-primary">Create New<i
+                           <viewlink name="Input signin" class="btn btn-sm btn-primary">Create New<i
                                  class="material-icons ml-2">add</i>
                            </viewlink>
                         </boardpermission>
@@ -81,52 +81,57 @@
                                     <sortlink field="name">Name</sortlink>
                                  </th>
                                  <th width="5%" class="bg-white">
-                                    <sortlink field="start_time">Start Time</sortlink>
+                                    <sortlink field="email">Email</sortlink>
                                  </th>
                                  <th width="5%" class="bg-white">
-                                    <sortlink field="end_time">End Time</sortlink>
+                                    <sortlink field="phone">Phone</sortlink>
                                  </th>
                                  <th width="5%" class="bg-white">
-                                    <sortlink field="person_1">Person 1</sortlink>
+                                    <sortlink field="organization">Organization</sortlink>
+                                 </th>
+                                 <th width="5%" class="bg-white">
+                                    <sortlink field="department">Department</sortlink>
+                                 </th>
+                                 <th width="5%" class="bg-white">
+                                    <sortlink field="title">Title</sortlink>
                                  </th>
                                  <th width="5%" class="bg-white" />
                               </tr>
                            </thead>
                            <tbody id="main-table" updatesection="true">
-                              <eocrepeatallrecords sort="[end_time] asc">
-                                 <tr class="cursor-pointer js-viewlink-delegate" data-panel-id="detail-panel"
-                                    data-panel-default-viewname="_blank" data-panel-ignore-clicks=".dropdown">
-                                    <td selected="true">
-                                       <eocfield name="touchpoint_name" />
+                              <eocrepeatallrecords sort="[form_session_name] asc">
+                                 <tr>
+                                    <td>
+                                       <eocfield name="fk_table_447" disableclick="true" />
                                     </td>
                                     <td>
-                                       <eocfield name="start_time" disableclick="true" />
+                                       <eocfield name="email" disableclick="true" />
                                     </td>
                                     <td>
-                                       <eocfield name="end_time" disableclick="true" />
+                                       <eocfield name="phone" disableclick="true" />
                                     </td>
                                     <td>
-                                       <eocfield name="person_1" disableclick="true" />
+                                       <eocfield name="organization" disableclick="true" />
+                                    </td>
+                                    <td>
+                                       <eocfield name="department" disableclick="true" />
+                                    </td>
+                                    <td>
+                                       <eocfield name="title" disableclick="true" />
                                     </td>
                                     <td class="text-right">
-                                       <viewlink name="View touch" target="sidePanel"
-                                          class="mobile-hide-lg viewlink-panel">
-                                          <viewparameter name="presentation">panel</viewparameter>
-                                       </viewlink>
                                        <div class="dropdown cursor-pointer">
                                           <a class="custom-link d-block print-hide" data-toggle="dropdown">
                                              <i class="material-icons faded-grey">more_horiz</i>
                                           </a>
                                           <div class="dropdown-menu dropdown-menu-right cursor-pointer">
-                                             <viewlink name="View touch" class="dropdown-item viewlink-default">View
-                                             </viewlink>
                                              <boardpermission name="Update">
-                                                <viewlink name="Input touchpoint" class="dropdown-item">Edit</viewlink>
+                                                <viewlink name="Input signin" class="dropdown-item">Edit</viewlink>
                                              </boardpermission>
                                              <boardpermission name="Delete">
                                                 <div class="dropdown-divider" />
-                                                <viewlink name="Delete touchpoint" class="dropdown-item text-danger">
-                                                   Delete</viewlink>
+                                                <viewlink name="Delete signin" class="dropdown-item text-danger">Delete
+                                                </viewlink>
                                              </boardpermission>
                                           </div>
                                        </div>
@@ -142,7 +147,7 @@
          </section>
          <footer class="mobile-banner bg-primary text-white mobile-flex-md flex-justify" aria-label="Mobile Menu">
             <boardpermission name="Create">
-               <viewlink name="Input touchpoint" class="text-white" refreshid="main-table">
+               <viewlink name="Input signin" class="text-white" refreshid="main-table">
                   <div class="flex flex-col">
                      <i class="material-icons cursor-pointer">add</i>CREATE NEW
                   </div>
@@ -150,7 +155,8 @@
             </boardpermission>
             <div class="flex flex-col dropup">
                <i class="material-icons cursor-pointer" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">more_horiz</i>ACTIONS<div class="dropdown-menu cursor-pointer">
+                  aria-expanded="false">more_horiz</i>ACTIONS
+               <div class="dropdown-menu cursor-pointer">
                   <a button="print-button" class="dropdown-item d-md-flex">Print Page</a>
                   <a activate="pdf-button" class="dropdown-item d-md-flex">Export to PDF</a>
                   <a activate="export-button" class="dropdown-item">Export to CSV</a>
@@ -159,19 +165,6 @@
          </footer>
       </div>
    </main>
-   <section id="detail-panel" class="modal fade drawer click-through right-align mobile-hide-lg"
-      aria-label="Detail Panel" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="false"
-      data-keyboard="true">
-      <div class="modal-dialog" role="document" style="max-width: 600px">
-         <button type="button" class="close drawer-close" data-dismiss="modal" aria-label="Close">
-            <i class="material-icons">close</i>
-         </button>
-         <div class="modal-content">
-            <embedview view="_blank" id="sidePanel" width="100%" height="100%" />
-            <viewlink name="_blank" target="sidePanel" type="hidden" />
-         </div>
-      </div>
-   </section>
    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/core/jquery.min.js"
       path="/js/core/jquery.min.js"></script>
    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/core/popper.min.js"
