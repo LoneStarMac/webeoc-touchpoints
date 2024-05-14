@@ -7,7 +7,7 @@
  * Author: Lach Mullen
  * Contributor: Jeff McDonald
  * Created with assistance from ChatGPT
- * Reference Library: QRCode (https://davidshimjs.github.io/qrcodejs/)
+ * Reference Library: QRCode (https://davidshimjs.github.io/qrcodejs/) - Licensed under MIT
  * Version: 1.0
  * Date: 2024-05-14
  * License: GNU General Public License (GPL)
@@ -25,8 +25,18 @@
  *
  * For a copy of the GNU General Public License, see http://www.gnu.org/licenses/.
  *
+ * This script is dependent on the QRCode library. Make sure to include the QRCode library
+ * before this script. The QRCode library can be included in your HTML as follows:
+ * <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+ * Ensure the QRCode script tag is placed in the HTML before this file is loaded.
+*
  * For questions or support, please contact [lm102@rice.edu].
  */
+
+// check if QRCode library is loaded
+if (typeof QRCode === 'undefined') {
+    console.error('touchpointlinks.js requires the QRCode library. Please include the library before this script.');
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     // Retrieve DOM elements that will be interacted with
