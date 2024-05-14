@@ -2,19 +2,14 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
-        name="viewport" />
-    <link rel="stylesheet" media="all"
-        href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" media="screen"
-        href="//webeocboardfiles.juvare.com/board/1.0/lib/flatpickr/flatpickr.min.css" />
-    <link rel="stylesheet" media="all" href="//webeocboardfiles.juvare.com/board/latest/css/material-kit.min.css"
-        path="/css/material-kit.min.css" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport" />
+    <link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" media="screen" href="//webeocboardfiles.juvare.com/board/1.0/lib/flatpickr/flatpickr.min.css" />
+    <link rel="stylesheet" media="all" href="//webeocboardfiles.juvare.com/board/latest/css/material-kit.min.css" path="/css/material-kit.min.css" />
 </head>
 
-<body class="bg-faded-grey-light" data-webeocdatetimeformat="{data/@webeocdatetimeformat}"
-    data-presentation="{/data/ViewParameter[@name = 'presentation']}">
+<body class="bg-faded-grey-light" data-webeocdatetimeformat="{data/@webeocdatetimeformat}" data-presentation="{/data/ViewParameter[@name = 'presentation']}">
     <section class="d-none">
         <span button="pdf-button">
             <pdflink enablemediaquery="true" enablejs="true" orientation="landscape" type="link">PDF</pdflink>
@@ -47,8 +42,7 @@
                         <ul class="navbar-nav ml-2 print-hide d-none d-sm-flex">
                             <li class="nav-item dropdown flex flex-center">
                                 <i class="material-icons cursor-pointer" data-toggle="dropdown">more_horiz</i>
-                                <div class="dropdown-menu dropdown-menu-right cursor-pointer navbar-dropdown-override"
-                                    x-placement="bottom-end">
+                                <div class="dropdown-menu dropdown-menu-right cursor-pointer navbar-dropdown-override" x-placement="bottom-end">
                                     <a button="print-button" class="dropdown-item">Print Page</a>
                                     <a activate="pdf-button" class="dropdown-item">Export to PDF</a>
                                 </div>
@@ -59,28 +53,22 @@
             </nav>
             <div class="scrollable-area">
                 <div>
-                    <section
-                        class="container-fluid container-max-width pt-2 pb-2 mt-2 form-border rounded dst-detail-view dst-display-section"
-                        id="i1dwo">
+                    <section class="container-fluid container-max-width pt-2 pb-2 mt-2 form-border rounded dst-detail-view dst-display-section" id="i1dwo">
                         <nav class="row print-hide my-2 mobile-hide">
                             <div class="col">
                                 <returnlink class="btn btn-sm btn-link text-primary">
-                                    <i class="material-icons">arrow_back_ios</i>
-                                    Return
+                                    <i class="material-icons">arrow_back_ios</i>Return
                                 </returnlink>
                             </div>
                             <div class="col text-right">
                                 <boardpermission name="Update">
-                                    <viewlink name="Input touchpoint" type="link"
-                                        class="btn btn-sm btn-link text-primary">
-                                        <i class="material-icons">create</i>
-                                        Edit Record
+                                    <viewlink name="Input touchpoint" type="link"  class="btn btn-sm btn-link text-primary">
+                                        <i class="material-icons">create</i>Edit Record
                                     </viewlink>
                                 </boardpermission>
                             </div>
                         </nav>
-                        <button type="button" class="btn btn-sm btn-primary" id="toggleQRButton">Show/hide QR
-                            Codes</button>
+                        <button type="button" class="btn btn-sm btn-primary" id="toggleQRButton">Show/hide QR Codes</button>
                         <div class="row dst-display-row" id="codes" style="display: none;">
                             <div class="mb-3 dst-display-group col-md-12" id="qrbox">
                                 <!-- Container for the Sign-in QR code -->
@@ -90,10 +78,8 @@
                                     <!-- Placeholder for feedback QR code -->
                                     <div id="feedback-link-container" />
                                     <!-- Placeholder for feedback link -->
-                                    <button id="sign-in-qr" class="btn btn-sm btn-success">Switch to sign-in
-                                        code</button>
-                                    <button id="feedback-qr-disabled" class="btn btn-sm btn-secondary"
-                                        disabled="disabled">Switch to feedback code</button>
+                                    <button id="sign-in-qr" class="btn btn-sm btn-success">Switch to sign-in code</button>
+                                    <button id="feedback-qr-disabled" class="btn btn-sm btn-secondary" disabled="disabled">Switch to feedback code</button>
                                 </div>
                                 <!-- Container for the Sign-in QR code -->
                                 <div id="qrbox-signin" style="display: none;">
@@ -102,10 +88,8 @@
                                     <!-- Placeholder for sign-in QR code -->
                                     <div id="signin-link-container" />
                                     <!-- Placeholder for sign-in link -->
-                                    <button id="sign-in-qr-disabled" class="btn btn-sm btn-secondary"
-                                        disabled="disabled">Switch to sign-in code</button>
-                                    <button id="feedback-qr" class="btn btn-sm btn-success">Switch to feedback
-                                        code</button>
+                                    <button id="sign-in-qr-disabled" class="btn btn-sm btn-secondary" disabled="disabled">Switch to sign-in code</button>
+                                    <button id="feedback-qr" class="btn btn-sm btn-success">Switch to feedback code</button>
                                 </div>
                             </div>
                         </div>
@@ -157,12 +141,7 @@
                                 <div class="row dst-display-row">
                                     <div class="mb-3 dst-display-group col-md-6" id="iwmkmp">
                                         <span class="faded-grey mr-2">Person 1:</span>
-                                        <span>
-                                            <eocfield name="person_1" />
-                                            (
-                                            <eocfield name="role_p1" />
-                                            )
-                                        </span>
+                                        <span><eocfield name="person_1" />(<eocfield name="role_p1" />)</span>
                                     </div>
                                 </div>
                                 <if test="@person_2 != ''">
@@ -212,7 +191,7 @@
                                 <h2 class="section-header">Signed-in (<externalexpression name="signin_count"
                                         table="signin">sum(case when fk_table_447 = @dataid and _webeoc_delete_flag !=
                                         'Yes' then 1 else 0 end)</externalexpression>)</h2>
-                                <div class="media-body" />
+                                <div class="media-body"></div>
                                 <boardpermission name="Create Signed-in">
                                     <viewlink name="Input signin" table="signin">
                                         <button type="button" class="btn btn-sm btn-primary">Sign-in
@@ -246,7 +225,7 @@
                                         <th width="5%" class="bg-white ">
                                             <sortlink field="entrydate" type="rl" table="signin">Entrydate</sortlink>
                                         </th>
-                                        <th width="5%" class="bg-white" />
+                                        <th width="5%" class="bg-white"></th>
                                     </tr>
                                 </thead>
                                 <tbody updatesection="true">
@@ -289,7 +268,7 @@
                                                                 class="dropdown-item dst-viewlink-input">Edit</viewlink>
                                                         </boardpermission>
                                                         <boardpermission name="Delete Signed-in">
-                                                            <div class="dropdown-divider" />
+                                                            <div class="dropdown-divider"></div>
                                                             <viewlink name="Delete signin" table="signin"
                                                                 class="dropdown-item text-danger dst-viewlink-delete">
                                                                 Delete</viewlink>
@@ -305,7 +284,7 @@
                         <section id="i025vn" class="dst-child-view-table">
                             <div class="dst-child-table-header d-flex align-items-center">
                                 <h2 class="section-header">Feedback</h2>
-                                <div class="media-body" />
+                                <div class="media-body"></div>
                                 <boardpermission name="Create Child Record">
                                     <viewlink name="Input feedback" table="feedback">
                                         <button type="button" class="btn btn-sm btn-primary">Add
@@ -330,19 +309,15 @@
                                 <tbody updatesection="true">
                                     <relatedlist table="feedback" filter="ISNULL(_webeoc_delete_flag,'')&lt;&gt;'yes'"
                                         applyIncidentFilter="false" rlid="i025vn">
-                                        <tr class="cursor-pointer js-viewlink-delegate" data-panel-id="detail-panel"
-                                            data-panel-default-viewname="_blank" data-panel-ignore-clicks=".dropdown">
+                                        <tr class="cursor-pointer js-viewlink-delegate" data-panel-id="detail-panel" data-panel-default-viewname="_blank" data-panel-ignore-clicks=".dropdown">
                                             <td>
-                                                <eocfield name="overall_rating" type="rl" table="feedback"
-                                                    disableclick="true" />
+                                                <eocfield name="overall_rating" type="rl" table="feedback" disableclick="true" />
                                             </td>
                                             <td>
-                                                <eocfield name="entrydate" type="rl" table="feedback"
-                                                    disableclick="true" />
+                                                <eocfield name="entrydate" type="rl" table="feedback" disableclick="true" />
                                             </td>
                                             <td class="text-right">
-                                                <viewlink name="View feedback" table="feedback" target="sidePanel"
-                                                    class="mobile-hide-lg viewlink-panel dst-viewlink-details">
+                                                <viewlink name="View feedback" table="feedback" target="sidePanel" class="mobile-hide-lg viewlink-panel dst-viewlink-details">
                                                     <viewparameter name="presentation">panel</viewparameter>
                                                 </viewlink>
                                                 <div class="dropdown cursor-pointer">
@@ -350,17 +325,14 @@
                                                         <i class="material-icons faded-grey">more_horiz</i>
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-right cursor-pointer">
-                                                        <viewlink name="View feedback" table="feedback"
-                                                            class="dropdown-item viewlink-default dst-viewlink-details">
+                                                        <viewlink name="View feedback" table="feedback" class="dropdown-item viewlink-default dst-viewlink-details">
                                                             View</viewlink>
                                                         <boardpermission name="Update Child Record">
-                                                            <viewlink name="Input feedback" table="feedback"
-                                                                class="dropdown-item dst-viewlink-input">Edit</viewlink>
+                                                            <viewlink name="Input feedback" table="feedback" class="dropdown-item dst-viewlink-input">Edit</viewlink>
                                                         </boardpermission>
                                                         <boardpermission name="Delete Child Record">
                                                             <div class="dropdown-divider" />
-                                                            <viewlink name="Delete feedback" table="feedback"
-                                                                class="dropdown-item text-danger dst-viewlink-delete">
+                                                            <viewlink name="Delete feedback" table="feedback"  class="dropdown-item text-danger dst-viewlink-delete">
                                                                 Delete</viewlink>
                                                         </boardpermission>
                                                     </div>
@@ -389,8 +361,7 @@
                         </div>
                     </viewlink>
                 </boardpermission>
-                <div class="flex flex-col dropup d-md-flex cursor-pointer" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
+                <div class="flex flex-col dropup d-md-flex cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="material-icons">more_horiz</i>
                     ACTIONS
                     <div class="dropdown-menu cursor-pointer">
@@ -401,36 +372,20 @@
             </footer>
         </main>
     </eocrepeatallrecords>
-    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/core/jquery.min.js"
-        path="/js/core/jquery.min.js"></script>
-    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/core/popper.min.js"
-        path="/js/core/popper.min.js"></script>
-    <script type="text/javascript"
-        src="//webeocboardfiles.juvare.com/board/latest/js/core/bootstrap-material-design.min.js"
-        path="/js/core/bootstrap-material-design.min.js"></script>
-    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/moment.min.js"
-        path="/js/plugins/moment.min.js"></script>
-    <script type="text/javascript"
-        src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-datetimepicker.js"
-        path="/js/plugins/bootstrap-datetimepicker.js"></script>
-    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/nouislider.min.js"
-        path="/js/plugins/nouislider.min.js"></script>
-    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-tagsinput.js"
-        path="/js/plugins/bootstrap-tagsinput.js"></script>
-    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-selectpicker.js"
-        path="/js/plugins/bootstrap-selectpicker.js"></script>
-    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jasny-bootstrap.min.js"
-        path="/js/plugins/jasny-bootstrap.min.js"></script>
-    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.flexisel.js"
-        path="/js/plugins/jquery.flexisel.js"></script>
-    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.sharrre.js"
-        path="/js/plugins/jquery.sharrre.js"></script>
-    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/material-kit.min.js"
-        path="/js/material-kit.min.js"></script>
-    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/ux-webeoc-board-standards.js"
-        path="/js/ux-webeoc-board-standards.js"></script>
-    <script type="text/javascript"
-        src="//webeocboardfiles.juvare.com/board/1.0/lib/flatpickr/flatpickr.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/core/jquery.min.js" path="/js/core/jquery.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/core/popper.min.js" path="/js/core/popper.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/core/bootstrap-material-design.min.js" path="/js/core/bootstrap-material-design.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/moment.min.js" path="/js/plugins/moment.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-datetimepicker.js" path="/js/plugins/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/nouislider.min.js" path="/js/plugins/nouislider.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-tagsinput.js" path="/js/plugins/bootstrap-tagsinput.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/bootstrap-selectpicker.js" path="/js/plugins/bootstrap-selectpicker.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jasny-bootstrap.min.js" path="/js/plugins/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.flexisel.js" path="/js/plugins/jquery.flexisel.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/plugins/jquery.sharrre.js" path="/js/plugins/jquery.sharrre.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/material-kit.min.js" path="/js/material-kit.min.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/latest/js/ux-webeoc-board-standards.js" path="/js/ux-webeoc-board-standards.js"></script>
+    <script type="text/javascript" src="//webeocboardfiles.juvare.com/board/1.0/lib/flatpickr/flatpickr.min.js"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script type="text/javascript">//<![CDATA[
         document.addEventListener("DOMContentLoaded", function () {
