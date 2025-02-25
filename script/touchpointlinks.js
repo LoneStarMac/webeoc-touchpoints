@@ -53,14 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (sessionElement && sessionElement.textContent.trim() &&  idElement && idElement.textContent.trim()) {
         var encodedSession = encodeURIComponent(sessionElement.textContent.trim()); // encode session information for URL usage
         var encodedId = encodeURIComponent(idElement.textContent.trim()); // encode session information for URL usage
-
+        var join = "&id=";
         // full URLs that will be used in QR codes and links
-        var feedbackURI = feedbackFormBaseURI + encodedSession + "&id=" + encodedId;
-        var signinURI = signinFormBaseURI + encodedSession + "&id=" + encodedId;
+        var feedbackURI = feedbackFormBaseURI + encodedSession + join + encodedId;
+        var signinURI = signinFormBaseURI + encodedSession + join + encodedId;
 
         // display versions of the URLs that are not encoded
-        var displayFeedbackURI = feedbackFormBaseURI + sessionElement.textContent.trim() + "&id=" + idElement.textContent.trim();
-        var displaySigninURI = signinFormBaseURI + sessionElement.textContent.trim() + "&id=" + idElement.textContent.trim();
+        var displayFeedbackURI = feedbackFormBaseURI + sessionElement.textContent.trim() + join + idElement.textContent.trim();
+        var displaySigninURI = signinFormBaseURI + sessionElement.textContent.trim() + join + idElement.textContent.trim();
 
         // generate and display QR codes using setupQRCode function
         setupQRCode("qrcode-feedback", feedbackURI);
