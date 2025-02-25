@@ -62,6 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var displayFeedbackURI = feedbackFormBaseURI + sessionElement.textContent.trim() + join + idElement.textContent.trim();
         var displaySigninURI = signinFormBaseURI + sessionElement.textContent.trim() + join + idElement.textContent.trim();
 
+        console.log("Feedback URI:", feedbackURI);
+        console.log("Sign-In URI:", signinURI);
         // generate and display QR codes using setupQRCode function
         setupQRCode("qrcode-feedback", feedbackURI);
         setupQRCode("qrcode-signin", signinURI);
