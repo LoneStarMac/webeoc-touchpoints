@@ -41,7 +41,7 @@ if (typeof QRCode === 'undefined') {
 document.addEventListener("DOMContentLoaded", function () {
     // Retrieve DOM elements that will be interacted with
     var sessionElement = document.getElementById("pmt_name__id_here"); // element where session info is stored
-    var idElement = document.getElementById("idTag"); // element where id info is stored
+    var idElement = document.querySelector("#idTag > u"); // element where id info is stored
     var qrboxFeedback = document.getElementById("qrbox-feedback"); // container for feedback QR code
     var qrboxSignin = document.getElementById("qrbox-signin"); // container for sign-in QR code
 
