@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var encodedId = encodeURIComponent(idElement.textContent.trim()); // encode session information for URL usage
 
         // full URLs that will be used in QR codes and links
-        var feedbackURI = feedbackFormBaseURI + encodedSession + "&id=" + idElement.textContent.trim();
-        var signinURI = signinFormBaseURI + encodedSession + "&id=" + idElement.textContent.trim();
+        var feedbackURI = feedbackFormBaseURI + encodedSession + "&id=" + encodedId;
+        var signinURI = signinFormBaseURI + encodedSession + "&id=" + encodedId;
 
         // display versions of the URLs that are not encoded
         var displayFeedbackURI = feedbackFormBaseURI + sessionElement.textContent.trim() + "&id=" + idElement.textContent.trim();
@@ -70,8 +70,10 @@ document.addEventListener("DOMContentLoaded", function () {
         createLink("feedback-link-container", feedbackURI, "Feedback form", displayFeedbackURI);
         createLink("signin-link-container", signinURI, "Sign-In form", displaySigninURI);
     } else {
-        console.error("Element is missing or empty!"); // log an error if sessionElement is not usable
+        console.error("sessionElement or idElement are missing or empty!"); // log an error if elements are not usable
     }
+
+
 
     // function to initialize QR codes with the provided element ID and URL
     function setupQRCode(elementId, url) {
@@ -104,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // create a copy button with a clipboard icon
         var copyBtn = document.createElement('button');
-        copyBtn.innerHTML = '&lt;i class="fas fa-copy"&gt;&lt;/i&gt;';
+        copyBtn.innerHTML = 'Copy';
         copyBtn.className = "btn btn-sm";
         copyBtn.onclick = function () {
             // copy the encoded URL to the clipboard
