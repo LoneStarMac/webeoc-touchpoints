@@ -40,7 +40,8 @@ if (typeof QRCode === 'undefined') {
 
 document.addEventListener("DOMContentLoaded", function () {
     // Retrieve DOM elements that will be interacted with
-    var sessionElement = document.getElementById("touchpoint_name__id_here"); // element where session info is stored
+    var sessionElement = document.getElementById("pmt_name__id_here"); // element where session info is stored
+    var idElement = document.querySelector("#idTag > u"); // element where id info is stored
     var qrboxFeedback = document.getElementById("qrbox-feedback"); // container for feedback QR code
     var qrboxSignin = document.getElementById("qrbox-signin"); // container for sign-in QR code
 
@@ -49,17 +50,20 @@ document.addEventListener("DOMContentLoaded", function () {
     var signinFormBaseURI = "https://forms.juvare.com/forms/6597fdff-ceec-41c8-93a9-af461db6f2dc?session=";
 
     // check if the sessionElement has content and is not just whitespace
-    if (sessionElement && sessionElement.textContent.trim()) {
-        var encoded = encodeURIComponent(sessionElement.textContent.trim()); // encode session information for URL usage
-
+    if (sessionElement && sessionElement.textContent.trim() &&  idElement && idElement.textContent.trim()) {
+        var encodedSession = encodeURIComponent(sessionElement.textContent.trim()); // encode session information for URL usage
+        var encodedId = encodeURIComponent(idElement.textContent.trim()); // encode session information for URL usage
+        var join = "&id=";
         // full URLs that will be used in QR codes and links
-        var feedbackURI = feedbackFormBaseURI + encoded;
-        var signinURI = signinFormBaseURI + encoded;
+        var feedbackURI = feedbackFormBaseURI + encodedSession + join + encodedId;
+        var signinURI = signinFormBaseURI + encodedSession + join + encodedId;
 
         // display versions of the URLs that are not encoded
-        var displayFeedbackURI = feedbackFormBaseURI + sessionElement.textContent.trim();
-        var displaySigninURI = signinFormBaseURI + sessionElement.textContent.trim();
+        var displayFeedbackURI = feedbackFormBaseURI + sessionElement.textContent.trim() + join + idElement.textContent.trim();
+        var displaySigninURI = signinFormBaseURI + sessionElement.textContent.trim() + join + idElement.textContent.trim();
 
+        console.log("Feedback URI:", feedbackURI);
+        console.log("Sign-In URI:", signinURI);
         // generate and display QR codes using setupQRCode function
         setupQRCode("qrcode-feedback", feedbackURI);
         setupQRCode("qrcode-signin", signinURI);
@@ -68,8 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
         createLink("feedback-link-container", feedbackURI, "Feedback form", displayFeedbackURI);
         createLink("signin-link-container", signinURI, "Sign-In form", displaySigninURI);
     } else {
-        console.error("Element is missing or empty!"); // log an error if sessionElement is not usable
+        console.error("sessionElement or idElement are missing or empty!"); // log an error if elements are not usable
     }
+
+
 
     // function to initialize QR codes with the provided element ID and URL
     function setupQRCode(elementId, url) {
@@ -102,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // create a copy button with a clipboard icon
         var copyBtn = document.createElement('button');
-        copyBtn.innerHTML = '&lt;i class="fas fa-copy"&gt;&lt;/i&gt;';
+        copyBtn.innerHTML = 'Copy';
         copyBtn.className = "btn btn-sm";
         copyBtn.onclick = function () {
             // copy the encoded URL to the clipboard
